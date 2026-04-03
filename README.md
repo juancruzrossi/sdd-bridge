@@ -10,14 +10,6 @@ No ambiguity survives the interview. No plan ships without adversarial review. N
 
 ## Installation
 
-### Claude Code (Official Marketplace)
-
-Install directly:
-
-```
-/plugin install juancruzrossi/sdd-bridge
-```
-
 ### Claude Code (via Plugin Marketplace)
 
 Register the marketplace first:
@@ -26,7 +18,7 @@ Register the marketplace first:
 /plugin marketplace add juancruzrossi/cc-marketplace
 ```
 
-Then install:
+Then install the plugin:
 
 ```
 /plugin install bridge@cc-marketplace
