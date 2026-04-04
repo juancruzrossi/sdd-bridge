@@ -84,6 +84,12 @@ Capture deferred ideas in the Non-goals/Out-of-scope section of the BRIEF.
 
 **Acceptance Criteria Elicitation** — Before closing gray areas, ask "How will we know this is done?" at least once during the interview to derive concrete, testable acceptance criteria for the BRIEF.
 
+**Reframe Vague Requirements** — When the user states a requirement that's subjective or unmeasurable, reframe it into concrete, testable criteria before accepting it. Example:
+> User: "It should be fast"
+> You: "Let's make that specific. Do you mean: page loads under 2s? API response under 500ms? Something else?"
+
+Do this inline during the interview — don't wait until the readiness check. Vague acceptance criteria are the #1 source of "done but not done" during review.
+
 ### Phase 4: Readiness Check
 
 Before closing the interview, verify the **minimum checklist**:
@@ -101,6 +107,20 @@ If any item is uncovered, ask targeted questions to fill the gap. If the user sa
 
 Example:
 > "We haven't explicitly discussed edge cases yet. I'd like to cover at least a couple — but if you'd rather move on, I can note it as an open item in the brief."
+
+### Phase 4b: Assume-Out-Loud
+
+Before generating the BRIEF, surface your assumptions explicitly. Present them to the user:
+
+> **Assumptions I'm making based on our conversation:**
+> 1. <assumption about technology, architecture, or approach>
+> 2. <assumption about user behavior or data>
+> 3. <assumption about scope or integration>
+> → Correct me now or I'll bake these into the brief.
+
+Only list assumptions that weren't explicitly stated by the user — things you inferred, defaulted to, or filled in mentally. If the user corrects any assumption, update the relevant decisions before generating the BRIEF.
+
+This step is cheap and prevents the most expensive type of rework: building on wrong premises.
 
 ### Phase 5: Generate BRIEF.md
 

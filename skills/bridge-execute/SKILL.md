@@ -131,7 +131,17 @@ If any task in the wave failed:
 3. If the user chooses to skip a task that has dependents, list the affected downstream tasks and confirm.
 4. Wait for user decision before proceeding.
 
-### 3e. Advance to next wave
+### 3e. Post-wave checkpoint
+
+Before advancing, run a quick health check:
+
+1. **Tests pass?** Run the project test suite (if one exists). If tests fail, stop and report — don't start the next wave on broken foundations.
+2. **Build OK?** Run the build command (if one exists). A failing build means the current wave left something broken.
+3. If both pass (or neither exists), proceed silently. If either fails, report the failure and ask the user whether to fix now or continue.
+
+This prevents cascading errors across waves — a bug in Wave 1 that goes undetected makes Waves 2-N wrong.
+
+### 3f. Advance to next wave
 
 1. Update the dependency graph: mark completed tasks as satisfied.
 2. Move to the next wave.
