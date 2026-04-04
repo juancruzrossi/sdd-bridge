@@ -67,6 +67,29 @@ You are executing Task <N>: <title>
    - If the project has NO git (check BRIEF.md for `**Git:** no` or run `git rev-parse --is-inside-work-tree`), skip the commit step entirely.
 6. Report back: what you did, what files you changed, verification results.
 
+## Deviation Rules
+When you encounter something not explicitly covered in the task:
+
+**Auto-fix (just do it, mention in report):**
+- Bug found while implementing (wrong logic, broken import, typo)
+- Missing dependency/import needed for your task
+- Build or lint error caused by your changes
+- Test that needs minor adjustment to match new behavior
+
+**Auto-add (do it, flag in report):**
+- Input validation the task forgot to mention
+- Error handling for obvious failure paths
+- Null/undefined guards on data you're consuming
+
+**Ask (report BLOCKED):**
+- Database schema changes not in the plan
+- Adding a new external dependency/library
+- Changing a public API contract or interface
+- Architectural decisions (new patterns, new abstractions)
+- Modifying files not listed in your task
+
+When in doubt, do less and report BLOCKED. Incomplete honest work beats complete wrong work.
+
 ## Status Protocol
 When you finish, report one of these statuses:
 - DONE — task completed, all acceptance criteria verified.
