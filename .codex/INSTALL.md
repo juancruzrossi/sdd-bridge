@@ -4,11 +4,23 @@ Install Neural in Codex as native skills.
 
 For Codex, this repository should install as `skills` only:
 
-- Do NOT copy anything from this repo into `~/.codex/commands/`
-- Do NOT create or use a `prompts/` directory for Neural
-- Do NOT use the repository `commands/` folder for Codex
+- Neural does NOT install through `prompts/`
+- Neural does NOT install through the repository `commands/` folder
+- Neural does NOT rely on `~/.codex/commands/` for this Codex setup
 
 The `commands/` directory in this repository exists for Claude Code plugin shims. Codex should ignore it.
+
+## Why this install path
+
+Codex officially documents skills as the reusable workflow format and `.agents/skills` as the discovery location for user- and repo-level skills.
+
+For Codex CLI, the official slash-command documentation covers built-in slash commands such as `/model`, `/review`, `/status`, and `/init`. This Neural install does not add custom Codex slash commands.
+
+That means the correct Codex install for this repository is:
+
+1. clone the repo somewhere stable
+2. expose `skills/` through `.agents/skills`
+3. let Codex discover those skills
 
 ## What gets installed
 
@@ -70,7 +82,7 @@ You should see:
 
 After installation, Codex should use the skills from `skills/`.
 
-This install does **not** create Codex commands.
+This install does **not** create custom Codex slash commands.
 This install does **not** use a prompts folder.
 This install does **not** copy the repository `commands/` directory.
 
