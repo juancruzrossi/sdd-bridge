@@ -1,24 +1,21 @@
 # Installing Neural for Codex
 
-Neural installs two things: **prompts** (commands the user invokes) and **skills** (the logic behind each command).
+Neural has two components: **commands** (what the user invokes) and **skills** (the logic behind each command).
 
 ## Installation
 
-```bash
-git clone https://github.com/juancruzrossi/neural.git ~/.codex/neural
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/juancruzrossi/neural.git ~/.codex/neural
+   ```
 
-# Install skills
-mkdir -p ~/.agents/skills
-ln -s ~/.codex/neural/skills ~/.agents/skills/neural
+2. Install skills:
+   ```bash
+   mkdir -p ~/.agents/skills
+   ln -s ~/.codex/neural/skills ~/.agents/skills/neural
+   ```
 
-# Install prompts (commands)
-mkdir -p ~/.codex/commands
-for f in ~/.codex/neural/prompts/*.md; do
-  ln -sf "$f" ~/.codex/commands/neural-"$(basename "$f")"
-done
-```
-
-If symlinks already exist, the `-sf` flag overwrites them.
+3. Install commands — for each `.md` file in `~/.codex/neural/commands/`, create a corresponding file in `~/.codex/commands/` named `neural-<command>.md`. Adapt the content: replace `Skill("neural-<name>")` with `Read the skill file at ~/.agents/skills/neural/neural-<name>/SKILL.md and follow its instructions exactly.` Keep the description and $ARGUMENTS as-is.
 
 ### Windows
 
@@ -26,11 +23,9 @@ If symlinks already exist, the `-sf` flag overwrites them.
 git clone https://github.com/juancruzrossi/neural.git "$env:USERPROFILE\.codex\neural"
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills"
 cmd /c mklink /J "$env:USERPROFILE\.agents\skills\neural" "$env:USERPROFILE\.codex\neural\skills"
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.codex\commands"
-Get-ChildItem "$env:USERPROFILE\.codex\neural\prompts\*.md" | ForEach-Object {
-  Copy-Item $_.FullName "$env:USERPROFILE\.codex\commands\neural-$($_.Name)"
-}
 ```
+
+Then follow step 3 above, placing adapted commands in `$env:USERPROFILE\.codex\commands\`.
 
 ## Verify
 
@@ -39,7 +34,7 @@ ls ~/.agents/skills/neural/*/SKILL.md
 ls ~/.codex/commands/neural-*.md
 ```
 
-You should see 10 skills and 9 prompts.
+You should see 10 skills and 9 commands.
 
 ## Update
 
@@ -47,7 +42,7 @@ You should see 10 skills and 9 prompts.
 cd ~/.codex/neural && git pull
 ```
 
-Symlinks point to the updated files automatically.
+After pulling, re-run step 3 if new commands were added.
 
 ## Uninstall
 
