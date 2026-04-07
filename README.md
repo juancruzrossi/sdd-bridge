@@ -6,8 +6,6 @@
 
 ```
 interview → plan → execute → review → archive
-                                 ↕         ↑
-                          debug / sync   address-review
 ```
 
 </div>
