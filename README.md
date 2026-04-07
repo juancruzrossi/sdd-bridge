@@ -6,6 +6,8 @@
 
 ```
 interview → plan → execute → review → archive
+                                 ↕         ↑
+                          debug / sync   address-review
 ```
 
 </div>
@@ -76,6 +78,10 @@ Three questions, inline plan, direct execution, light review. No files generated
 ### `/neural:debug` — Root-cause investigation
 
 Four-phase systematic debugging: investigate → analyze → hypothesize → implement. No fixes without root cause.
+
+### `/neural:sync` — Align specs with reality
+
+After implementation, code evolves — refactors, bug fixes, scope changes. Specs go stale. Sync reads the actual codebase and updates BRIEF.md and PLAN.md to match what was built. Code is the source of truth.
 
 ### `/neural:status` — Where am I?
 

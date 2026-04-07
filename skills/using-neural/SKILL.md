@@ -19,6 +19,7 @@ Neural is a Spec-Driven Development framework. It provides a structured workflow
 | `/neural:quick` | Fast-path | Mini-interview + inline plan + execute + light review (no files) |
 | `/neural:debug` | Diagnosis | Root-cause investigation for bugs and failures |
 | `/neural:status` | State | Show progress of all features in .neural/wip/ |
+| `/neural:sync` | Maintenance | Sync specs with post-implementation code (code is source of truth) |
 | `/neural:archive` | Cleanup | Move completed feature from wip/ to archive/ |
 
 ## The Workflow
@@ -26,7 +27,7 @@ Neural is a Spec-Driven Development framework. It provides a structured workflow
 ```
 interview → plan → execute → review → archive
                                 ↕         ↑
-                              debug   address-review
+                         debug / sync   address-review
 ```
 
 ## When to Suggest Neural
