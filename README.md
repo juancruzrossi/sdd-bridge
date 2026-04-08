@@ -89,6 +89,10 @@ Shows progress of all features in `.neural/wip/` with next-step suggestions. Det
 
 Moves completed features from `.neural/wip/` to `.neural/archive/`.
 
+### `/neural:help` — Command reference
+
+Lists all available Neural commands with brief descriptions. Quick reference for the workflow.
+
 ## Artifacts
 
 All Neural artifacts live in `.neural/` at your project root:

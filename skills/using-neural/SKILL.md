@@ -21,6 +21,7 @@ Neural is a Spec-Driven Development framework. It provides a structured workflow
 | `/neural:status` | State | Show progress of all features in .neural/wip/ |
 | `/neural:sync` | Maintenance | Sync specs with post-implementation code (code as source of truth) |
 | `/neural:archive` | Cleanup | Move completed feature from wip/ to archive/ |
+| `/neural:help` | Reference | Show all available commands with descriptions |
 
 ## The Workflow
 
