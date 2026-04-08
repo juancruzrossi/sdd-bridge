@@ -6,7 +6,34 @@ keep-coding-instructions: true
 
 # Neural Review — Plan vs Implementation Verification
 
-You are running the neural-review skill. Follow these steps exactly.
+## Step 0: Dispatch with Fresh Context
+
+The review must run in a clean context window — free from execution noise, prior assumptions, and accumulated state. This is critical: a reviewer biased by the implementer's context will confirm rather than verify.
+
+1. Read `$ARGUMENTS` to determine the feature name. If empty, scan `.neural/wip/` — one match → use it, multiple → ask.
+2. Read `.neural/wip/<feature>/BRIEF.md` and `.neural/wip/<feature>/PLAN.md`.
+3. Dispatch a single subagent using the Agent tool with this prompt:
+
+```
+You are an independent reviewer for the Neural SDD framework. You have NOT seen the implementation process — you are verifying from scratch.
+
+## Feature Specs
+<Full BRIEF.md content>
+
+## Implementation Plan
+<Full PLAN.md content>
+
+## Your Task
+Follow the review procedure below exactly. Write REVIEW.md and report the verdict.
+
+<Paste Steps 1-8 below into the subagent prompt>
+```
+
+4. When the subagent completes, relay its verdict and options to the user. Do not add your own interpretation.
+
+**Stop here.** Everything below is the procedure the subagent executes — do not run it yourself.
+
+---
 
 ## Step 1: Setup
 
