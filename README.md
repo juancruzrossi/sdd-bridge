@@ -25,16 +25,16 @@ Most AI agent failures aren't about bad code — they're about unclear requireme
 
 ### Claude Code (via Plugin Marketplace)
 
-Register the marketplace first:
+Register the Neural marketplace:
 
 ```
-/plugin marketplace add juancruzrossi/jx-marketplace
+/plugin marketplace add juancruzrossi/neural
 ```
 
 Then install the plugin:
 
 ```
-/plugin install neural@jx-marketplace
+/plugin install neural@neural
 ```
 
 ### Codex

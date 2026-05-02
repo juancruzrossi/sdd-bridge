@@ -1,6 +1,6 @@
 {
   "name": "neural",
-  "description": "Development marketplace for Neural SDD plugin",
+  "description": "Official marketplace for the Neural SDD plugin",
   "owner": {
     "name": "Juan Cruz Rossi",
     "url": "https://github.com/juancruzrossi"
@@ -9,7 +9,7 @@
     {
       "name": "neural",
       "description": "Spec-Driven Development framework for Claude Code — structured interview, planning, execution, and review workflow",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "source": "./",
       "author": {
         "name": "Juan Cruz Rossi",
