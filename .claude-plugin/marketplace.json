@@ -9,7 +9,7 @@
     {
       "name": "neural",
       "description": "Spec-Driven Development framework for Claude Code — structured interview, planning, execution, and review workflow",
-      "version": "1.5.1",
+      "version": "1.6.0",
       "source": "./",
       "author": {
         "name": "Juan Cruz Rossi",

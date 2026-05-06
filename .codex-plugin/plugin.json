@@ -1,0 +1,6 @@
+{
+  "name": "neural",
+  "version": "1.6.0",
+  "description": "Spec-Driven Development framework for Codex",
+  "skills": "./skills/"
+}

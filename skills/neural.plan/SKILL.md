@@ -1,12 +1,12 @@
 ---
-name: neural-plan
-description: "[Neural SDD] Implementation planning with adversarial review and optional Codex cross-review. Part of the neural plugin — invoke via /neural:plan"
+name: neural.plan
+description: "[Neural SDD] Implementation planning with adversarial review and optional Codex cross-review. Part of the neural plugin — invoke via /neural.plan"
 keep-coding-instructions: true
 ---
 
 # Neural Plan — Implementation Planning
 
-You are generating an implementation plan from a BRIEF.md produced by neural-interview.
+You are generating an implementation plan from a BRIEF.md produced by interview.
 
 ## 1. Locate the brief
 
@@ -14,7 +14,7 @@ You are generating an implementation plan from a BRIEF.md produced by neural-int
 2. If exactly one feature directory exists, use it automatically.
 3. If multiple exist and the user passed `$ARGUMENTS` matching a feature name, use that one.
 4. If multiple exist and no argument matches, list them and ask: "Which feature should I plan?"
-5. Read `.neural/wip/<feature>/BRIEF.md`. If it does not exist, stop and tell the user to run `/neural:interview` first.
+5. Read `.neural/wip/<feature>/BRIEF.md`. If it does not exist, stop and tell the user to run `/neural.interview` first.
 
 ## 1b. Explore the codebase
 
@@ -101,7 +101,7 @@ Rules for task generation:
 - "align X with Y" (state the concrete target)
 - "add necessary tests" (specify WHICH test cases)
 
-If you can't be specific, the brief needs more detail — go back to `/neural:interview`.
+If you can't be specific, the brief needs more detail — go back to `/neural.interview`.
 
 ## 3. Adversarial self-review
 
@@ -169,4 +169,4 @@ Output a structured review with: CRITICAL issues, WARNINGS, and SUGGESTIONS. Be 
 
 1. Write the final PLAN.md to `.neural/wip/<feature>/PLAN.md`.
 2. Print a summary: number of tasks, number of waves, top risks.
-3. Suggest: **"Ready to execute? Run `/neural:execute`"**
+3. Suggest: **"Ready to execute? Run `/neural.execute`"**

@@ -1,12 +1,12 @@
 ---
-name: neural-interview
-description: "[Neural SDD] Socratic interview with gray-area detection and selective pressure to clarify requirements before planning. Use when starting a new feature, building something complex, or when requirements are ambiguous. Part of the neural plugin — invoke via /neural:interview"
+name: neural.interview
+description: "[Neural SDD] Socratic interview with gray-area detection and selective pressure to clarify requirements before planning. Use when starting a new feature, building something complex, or when requirements are ambiguous. Part of the neural plugin — invoke via /neural.interview"
 keep-coding-instructions: true
 ---
 
 # Neural Interview
 
-Turn vague ideas into execution-ready briefs through structured Socratic interrogation. This skill identifies what's ambiguous, resolves it through targeted questions, and locks decisions into a BRIEF.md that feeds directly into `/neural:plan`.
+Turn vague ideas into execution-ready briefs through structured Socratic interrogation. This skill identifies what's ambiguous, resolves it through targeted questions, and locks decisions into a BRIEF.md that feeds directly into `/neural.plan`.
 
 ## Why This Exists
 
@@ -203,7 +203,7 @@ After writing the BRIEF.md, present a summary:
 > Decisions locked: <count>
 > Open items: <count or "none">
 >
-> Ready to plan? Run `/neural:plan`
+> Ready to plan? Run `/neural.plan`
 
 If there are open items, also mention:
-> "Note: <N> items were deferred. `/neural:plan` will work with what we have, but you may want to revisit these during planning."
+> "Note: <N> items were deferred. `/neural.plan` will work with what we have, but you may want to revisit these during planning."

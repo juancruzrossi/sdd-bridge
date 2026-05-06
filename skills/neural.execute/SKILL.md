@@ -1,12 +1,12 @@
 ---
-name: neural-execute
-description: "[Neural SDD] Wave-based parallel execution with fresh subagents and atomic commits. Part of the neural plugin — invoke via /neural:execute"
+name: neural.execute
+description: "[Neural SDD] Wave-based parallel execution with fresh subagents and atomic commits. Part of the neural plugin — invoke via /neural.execute"
 keep-coding-instructions: true
 ---
 
 # Neural Execute — Wave-Based Parallel Execution
 
-You are executing an implementation plan from a PLAN.md produced by neural-plan.
+You are executing an implementation plan from a PLAN.md produced by plan.
 
 ## 1. Locate the feature
 
@@ -14,7 +14,7 @@ You are executing an implementation plan from a PLAN.md produced by neural-plan.
 2. If exactly one feature directory exists, use it automatically.
 3. If multiple exist and the user passed `$ARGUMENTS` matching a feature name, use that one.
 4. If multiple exist and no argument matches, list them and ask: "Which feature should I execute?"
-5. Read `.neural/wip/<feature>/PLAN.md`. If it does not exist, stop and tell the user to run `/neural:plan` first.
+5. Read `.neural/wip/<feature>/PLAN.md`. If it does not exist, stop and tell the user to run `/neural.plan` first.
 6. Read `.neural/wip/<feature>/BRIEF.md` for context. If it does not exist, warn but continue with PLAN.md only.
 
 ## 2. Parse tasks and build the dependency graph
@@ -62,7 +62,7 @@ You are executing Task <N>: <title>
    - If a build system exists: run the build and ensure it succeeds.
    - If a linter is configured: run it and fix any issues.
    - If none of the above exist: manually verify the acceptance criteria.
-5. **Do NOT commit.** The orchestrator handles all git writes at the end of `/neural:execute`, gated by user approval.
+5. **Do NOT commit.** The orchestrator handles all git writes at the end of `/neural.execute`, gated by user approval.
    - Never run `git add`, `git commit`, `git stash`, `git restore`, or any command that mutates git state.
    - `git diff` / `git status` are fine (read-only).
 6. Report back with:
@@ -208,14 +208,14 @@ After all waves complete (or execution is aborted):
 ## 6. Final report
 
 1. Print: tasks completed / failed / skipped, subagent warnings. Note that the working tree still holds uncommitted changes — they will be addressed in § 7.
-2. If all succeeded, signal readiness for `/neural:review` (but only after § 7 resolves).
+2. If all succeeded, signal readiness for `/neural.review` (but only after § 7 resolves).
 3. If any failed or were skipped, note that those should be addressed before review.
 
 ## 7. Commit phase (LAST step — always ask the user)
 
-This is the final, isolated step of `/neural:execute`. All prior steps left the working tree unstaged on purpose; only here do commits happen, and only with the user's explicit approval.
+This is the final, isolated step of `/neural.execute`. All prior steps left the working tree unstaged on purpose; only here do commits happen, and only with the user's explicit approval.
 
-Skip this entire step if BRIEF.md has `**Git:** no` or `git rev-parse --is-inside-work-tree` fails — in that case, `/neural:execute` ends after § 6.
+Skip this entire step if BRIEF.md has `**Git:** no` or `git rev-parse --is-inside-work-tree` fails — in that case, `/neural.execute` ends after § 6.
 
 1. Print the task → files mapping accumulated in § 3c-bis:
    ```
@@ -243,4 +243,4 @@ Skip this entire step if BRIEF.md has `**Git:** no` or `git rev-parse --is-insid
 5. **If Show diff** — print `git status` + per-task file list, then re-prompt from step 2.
 6. **If No** — note the working tree is left unstaged; the user owns commits from here.
 
-After this step, suggest `/neural:review`.
+After this step, suggest `/neural.review`.

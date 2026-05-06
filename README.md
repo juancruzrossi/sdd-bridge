@@ -39,59 +39,66 @@ Then install the plugin:
 
 ### Codex
 
-Tell Codex:
+Register the Neural marketplace:
 
 ```
-Fetch and follow instructions from https://raw.githubusercontent.com/juancruzrossi/neural/main/.codex/INSTALL.md
+codex plugin marketplace add juancruzrossi/neural
+```
+
+Then open Codex and install Neural from the plugin directory:
+
+```
+codex
+/plugins
 ```
 
 ## The Workflow
 
-### `/neural:interview` — Clarify before you build
+### `/neural.interview` / `$neural.interview` — Clarify before you build
 
 Socratic interview that identifies gray areas in your requirements and resolves them one by one. Uses selective pressure — challenges assumptions only where risk is high. Locks decisions into a `BRIEF.md`. Detects git status and handles non-git projects gracefully.
 
-### `/neural:plan` — Plan with adversarial review
+### `/neural.plan` / `$neural.plan` — Plan with adversarial review
 
 Generates an implementation plan with tasks, dependencies, and wave grouping for parallel execution. Runs a self-adversarial pass ("what can go wrong?"). Optionally sends the plan to Codex for cross-review — you decide which suggestions to apply.
 
-### `/neural:execute` — Parallel execution with fresh context
+### `/neural.execute` / `$neural.execute` — Parallel execution with fresh context
 
 Groups tasks into dependency waves. Dispatches independent tasks to parallel subagents, each with a clean context window — no accumulated noise, no quality degradation. Smart model routing: routine tasks go to lightweight models, complex tasks to premium ones. Every subagent verifies its own work before committing.
 
-### `/neural:review` — Verify against the goal, not the task list
+### `/neural.review` / `$neural.review` — Verify against the goal, not the task list
 
 Two-layer verification:
 1. **Plan vs Implementation** — did every task get done?
 2. **Goal-Backward** — does the code actually solve the original problem? Checks 4 levels: exists → substantive → wired → functional. Catches stubs, placeholders, and orphaned code.
 
-### `/neural:address-review` — Fix what review found
+### `/neural.address-review` / `$neural.address-review` — Fix what review found
 
 Parses REVIEW.md, builds a fix plan from blocking issues and warnings, and executes fixes with verification. No manual triage needed.
 
-### `/neural:quick` — Fast-path for small tasks
+### `/neural.quick` / `$neural.quick` — Fast-path for small tasks
 
 Three questions, inline plan, direct execution, light review. No files generated. For when the task is clear and small.
 
-### `/neural:debug` — Root-cause investigation
+### `/neural.debug` / `$neural.debug` — Root-cause investigation
 
 Four-phase systematic debugging: investigate → analyze → hypothesize → implement. No fixes without root cause.
 
-### `/neural:sync` — Align specs with reality
+### `/neural.sync` / `$neural.sync` — Align specs with reality
 
 After implementation, code evolves — refactors, bug fixes, scope changes. Specs go stale. Sync reads the actual codebase and updates BRIEF.md and PLAN.md to match what was built. Code is the source of truth.
 
-### `/neural:status` — Where am I?
+### `/neural.status` / `$neural.status` — Where am I?
 
 Shows progress of all features in `.neural/wip/` with next-step suggestions. Detects in-progress work on session start.
 
-### `/neural:archive` — Clean up
+### `/neural.archive` / `$neural.archive` — Clean up
 
 Moves completed features from `.neural/wip/` to `.neural/archive/`.
 
-### `/neural:help` — Command reference
+### `/neural.help` / `$neural.help` — Command reference
 
-Lists all available Neural commands with brief descriptions. Quick reference for the workflow.
+Shows all available Neural plugin commands with brief descriptions and the recommended workflow.
 
 ## Artifacts
 

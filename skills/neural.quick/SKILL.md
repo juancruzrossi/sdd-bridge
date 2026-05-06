@@ -1,6 +1,6 @@
 ---
-name: neural-quick
-description: "[Neural SDD] Fast-path for small tasks — mini-interview, inline plan, execute, and light review in one pass. No files generated. Part of the neural plugin — invoke via /neural:quick"
+name: neural.quick
+description: "[Neural SDD] Fast-path for small tasks — mini-interview, inline plan, execute, and light review in one pass. No files generated. Part of the neural plugin — invoke via /neural.quick"
 keep-coding-instructions: true
 ---
 
@@ -66,6 +66,6 @@ After implementation, perform a quick verification:
 
 ## Important
 
-- This is the complete cycle. Do NOT hand off to other neural commands.
+- This is the complete cycle. Do NOT hand off to other neural skills.
 - Do NOT generate any files in `.neural/` or elsewhere as process artifacts.
 - If during execution you realize the task is bigger than expected, stop and suggest switching to the full neural flow.

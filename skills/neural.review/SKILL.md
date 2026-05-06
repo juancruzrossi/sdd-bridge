@@ -1,6 +1,6 @@
 ---
-name: neural-review
-description: "[Neural SDD] Plan vs implementation verification with goal-backward analysis. Part of the neural plugin — invoke via /neural:review"
+name: neural.review
+description: "[Neural SDD] Plan vs implementation verification with goal-backward analysis. Part of the neural plugin — invoke via /neural.review"
 keep-coding-instructions: true
 ---
 
@@ -161,11 +161,11 @@ Use Grep to execute these searches across the changed files. Record all findings
 
 1. Print a summary of the review.
 2. Based on the verdict, present options:
-   - **PASS (no warnings):** "All clean! Run `/neural:archive` to archive this feature."
+   - **PASS (no warnings):** "All clean! Run `/neural.archive` to archive this feature."
    - **PASS WITH WARNINGS:** "Review passed but there are warnings."
-     > 1. `/neural:address-review` — fix the warnings automatically
-     > 2. `/neural:archive` — archive as-is, warnings accepted
+     > 1. `/neural.address-review` — fix the warnings automatically
+     > 2. `/neural.archive` — archive as-is, warnings accepted
    - **FAIL:** "Issues found."
-     > 1. `/neural:address-review` — fix blocking issues and gaps automatically
-     > 2. `/neural:debug` — investigate manually
-     > 3. Fix manually and run `/neural:review` again
+     > 1. `/neural.address-review` — fix blocking issues and gaps automatically
+     > 2. `/neural.debug` — investigate manually
+     > 3. Fix manually and run `/neural.review` again
