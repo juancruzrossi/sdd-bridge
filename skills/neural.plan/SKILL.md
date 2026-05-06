@@ -60,6 +60,7 @@ Read the full BRIEF.md content. Then produce `.neural/wip/<feature>/PLAN.md` wit
 - **Why**: ...
 - **Files**: likely touched files
 - **Acceptance**: how to verify this task is done
+- **Verification**: exact check to run or perform
 
 <!-- Repeat for each task -->
 
@@ -92,6 +93,7 @@ Rules for task generation:
 - Estimate as S (< 30 min), M (30-120 min), L (> 2 hrs).
 - Group into waves: tasks with no unmet dependencies share a wave.
 - Derive acceptance criteria directly from the BRIEF's requirements.
+- Each task must include a concrete Verification step: test command, build/lint command, manual check, or code inspection target.
 - **Vertical slices are mandatory.** Every wave MUST deliver end-to-end functionality cutting through all layers (data → logic → interface → test), not horizontal slabs of a single layer. A wave that produces "all database models" or "all API endpoints" is a plan failure — restructure it so each wave delivers one complete, verifiable feature slice. Example: Wave 1 delivers login (schema + API + UI + test), not Wave 1 delivers all schemas.
 
 **No placeholders allowed.** Every task must contain concrete, specific values. The following are banned from task descriptions:
