@@ -16,7 +16,7 @@ Systematic root-cause investigation for bugs and failures. Five phases: context,
 
 1. **Read the bug description from the arguments.** If no description was provided, ask: "What bug or error are you seeing? Paste the error message, describe the behavior, or point me to the failing code."
 
-2. **Check for Neural feature context.** Look for `.neural/wip/` directories. If the bug relates to an active feature, read its `CONTEXT.md` and `PLAN.md` for architectural context and intended behavior.
+2. **Check for Neural feature context.** Look for `.neural/wip/` directories. If the bug relates to an active feature, read its `CONTEXT.md`, `PLAN.md`, and any ADRs under `docs/adr/` for architectural context, intended behavior, and binding decisions.
 
 ### Phase 2: INVESTIGATE
 

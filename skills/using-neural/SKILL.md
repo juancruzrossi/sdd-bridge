@@ -67,10 +67,12 @@ All Neural artifacts live in `.neural/` at the project root:
 .neural/
 ├── wip/<feature-name>/
 │   ├── CONTEXT.md    ← interview output
+│   ├── docs/adr/     ← optional feature decisions
 │   ├── PLAN.md       ← plan output
 │   └── REVIEW.md     ← review output
 └── archive/<feature-name>/
     ├── CONTEXT.md
+    ├── docs/adr/
     ├── PLAN.md
     └── REVIEW.md
 ```
