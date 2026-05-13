@@ -10,7 +10,7 @@ Run a Socratic interview that pressure-tests every aspect of the feature until y
 
 ## Rules
 
-- Respond in the user's language.
+- Respond in the user's language. Write `CONTEXT.md` and ADRs in that same language.
 - One question at a time. Include your recommended answer when you can.
 - If code/docs can answer the question, inspect them instead of asking.
 - Cross-check user claims against code. If they conflict, surface it before continuing.
