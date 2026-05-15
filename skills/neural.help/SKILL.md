@@ -22,7 +22,7 @@ Neural SDD — Plugin Commands
 Workflow:
   /neural.interview       Socratic interview → generates CONTEXT.md
   /neural.plan            Implementation plan with adversarial review → generates PLAN.md
-  /neural.execute         Wave-based parallel execution with fresh subagents
+  /neural.execute         Test-driven execution loop — one task at a time, red→green→refactor
   /neural.review          Plan vs implementation + goal-backward verification → generates REVIEW.md
   /neural.address-review  Fix blocking issues and warnings from REVIEW.md
   /neural.archive         Move completed feature from wip/ to archive/
@@ -45,7 +45,7 @@ Neural SDD — Plugin Commands
 Workflow:
   $neural.interview       Socratic interview → generates CONTEXT.md
   $neural.plan            Implementation plan with adversarial review → generates PLAN.md
-  $neural.execute         Wave-based parallel execution with fresh subagents
+  $neural.execute         Test-driven execution loop — one task at a time, red→green→refactor
   $neural.review          Plan vs implementation + goal-backward verification → generates REVIEW.md
   $neural.address-review  Fix blocking issues and warnings from REVIEW.md
   $neural.archive         Move completed feature from wip/ to archive/

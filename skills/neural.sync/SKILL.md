@@ -36,7 +36,7 @@ For each task in the plan:
 - **Removed** — mark `[removed: <one-line reason>]`.
 - **Added post-plan** — append under a `## Post-Plan Additions` section, same format as existing tasks.
 
-Preserve the original structure (waves, dependencies). Only touch content that diverged.
+Preserve the original structure (task order, dependencies, behaviors). Only touch content that diverged.
 
 ## Step 4: Update CONTEXT.md
 

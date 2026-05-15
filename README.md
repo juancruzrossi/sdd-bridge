@@ -18,7 +18,7 @@ Most AI agent failures aren't about bad code — they're about unclear requireme
 |---|---|---|
 | Vague requirements | Interview | Socratic questioning with selective pressure |
 | Plans based on assumptions | Plan | Mandatory codebase exploration + adversarial self-review |
-| Quality degradation as context window fills | Execute | Fresh context window per subagent |
+| Stubs and over-built code | Execute | Vertical-slice TDD loop — every line of code answers a failing test |
 | "Done" but it's stubs | Review | 4-level goal-backward verification |
 
 ## Installation
@@ -53,11 +53,11 @@ Socratic interview that clarifies requirements and captures concise feature cont
 
 ### `/neural.plan` — Plan with adversarial review
 
-Generates an implementation plan with tasks, dependencies, and wave grouping for parallel execution. Runs a self-adversarial pass ("what can go wrong?"). Optionally sends the plan to Codex for cross-review — you decide which suggestions to apply.
+Generates a sequential task list with dependencies and explicit per-task **Behaviors to verify** — each behavior becomes one red→green slice during execution. Runs a self-adversarial pass ("what can go wrong?"). Optionally sends the plan to Codex for cross-review — you decide which suggestions to apply.
 
-### `/neural.execute` — Parallel execution with fresh context
+### `/neural.execute` — Test-driven execution loop
 
-Groups tasks into dependency waves. Dispatches independent tasks to parallel subagents, each with a clean context window and the feature `CONTEXT.md`. Smart model routing: routine tasks go to lightweight models, complex tasks to premium ones. Every subagent verifies its own work before committing.
+Walks the plan one task at a time, in dependency order. For each task, follows a vertical-slice TDD loop: one failing test → minimum code to pass → next test → refactor on green. No subagents, no waves — fewer tokens, more discipline, no stubs. Commits are atomic per task and only happen with explicit user approval at the end.
 
 ### `/neural.review` — Verify against the goal, not the task list
 

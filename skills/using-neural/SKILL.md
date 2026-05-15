@@ -14,7 +14,7 @@ Neural is a Spec-Driven Development framework. It provides a structured workflow
 |-------------|-------|-------|---------|
 | `/neural.interview` | `$neural.interview` | Clarification | Socratic interview → generates CONTEXT.md |
 | `/neural.plan` | `$neural.plan` | Planning | Implementation plan with adversarial review → generates PLAN.md |
-| `/neural.execute` | `$neural.execute` | Implementation | Wave-based parallel execution with fresh subagents |
+| `/neural.execute` | `$neural.execute` | Implementation | Test-driven execution loop — one task at a time, red→green→refactor |
 | `/neural.review` | `$neural.review` | Verification | Plan vs implementation + goal-backward verification |
 | `/neural.address-review` | `$neural.address-review` | Remediation | Fix blocking issues and warnings from REVIEW.md |
 | `/neural.quick` | `$neural.quick` | Fast-path | Mini-interview + inline plan + execute + light review (no files) |
