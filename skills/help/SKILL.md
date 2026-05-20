@@ -1,6 +1,7 @@
 ---
-name: neural.help
-description: "[Neural SDD] Show all Neural plugin commands with descriptions and the recommended workflow. Part of the neural plugin — invoke via /neural.help"
+name: help
+description: "Show all Neural plugin commands with descriptions and the recommended workflow"
+disable-model-invocation: true
 keep-coding-instructions: true
 ---
 
@@ -10,9 +11,9 @@ Show the Neural command reference for the current agent.
 
 ## Detect Platform
 
-1. If running in Claude Code, use slash commands: `/neural.<name>`.
+1. If running in Claude Code, use slash commands: `/neural:<name>`.
 2. If running in Codex, use skill commands: `$neural.<name>`.
-3. If the platform is unclear, default to slash commands like Claude Code: `/neural.<name>`.
+3. If the platform is unclear, default to slash commands like Claude Code: `/neural:<name>`.
 
 ## Claude Code Output
 
@@ -20,19 +21,19 @@ Show the Neural command reference for the current agent.
 Neural SDD — Plugin Commands
 
 Workflow:
-  /neural.interview       Socratic interview → generates CONTEXT.md
-  /neural.plan            Implementation plan with adversarial review → generates PLAN.md
-  /neural.execute         Test-driven execution loop — one task at a time, red→green→refactor
-  /neural.review          Plan vs implementation + goal-backward verification → generates REVIEW.md
-  /neural.address-review  Fix blocking issues and warnings from REVIEW.md
-  /neural.archive         Move completed feature from wip/ to archive/
+  /neural:interview       Socratic interview → generates CONTEXT.md
+  /neural:plan            Implementation plan with adversarial review → generates PLAN.md
+  /neural:execute         Test-driven execution loop — one task at a time, red→green→refactor
+  /neural:review          Plan vs implementation + goal-backward verification → generates REVIEW.md
+  /neural:address-review  Fix blocking issues and warnings from REVIEW.md
+  /neural:archive         Move completed feature from wip/ to archive/
 
 Utilities:
-  /neural.quick           Fast-path: mini-interview + inline plan + execute + light review
-  /neural.debug           Root-cause investigation for bugs and failures
-  /neural.sync            Sync specs with post-implementation code
-  /neural.status          Show progress of all features in .neural/wip/
-  /neural.help            Show this command reference
+  /neural:quick           Fast-path: mini-interview + inline plan + execute + light review
+  /neural:debug           Root-cause investigation for bugs and failures
+  /neural:sync            Sync specs with post-implementation code
+  /neural:status          Show progress of all features in .neural/wip/
+  /neural:help            Show this command reference
 
 Typical flow: interview → plan → execute → review → archive
 ```

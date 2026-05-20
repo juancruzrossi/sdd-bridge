@@ -1,6 +1,7 @@
 ---
-name: neural.sync
-description: "[Neural SDD] Sync specs (CONTEXT.md, PLAN.md) with post-implementation code — code as source of truth. Part of the neural plugin — invoke via /neural.sync"
+name: sync
+description: "Sync specs (CONTEXT.md, PLAN.md) with post-implementation code — code as source of truth"
+disable-model-invocation: true
 keep-coding-instructions: true
 ---
 
@@ -50,7 +51,7 @@ The context should read as if it was written with knowledge of what was actually
 
 ## Step 5: Handle REVIEW.md
 
-If `REVIEW.md` exists, delete it. A review based on stale specs is misleading — the user should run `/neural.review` fresh after sync.
+If `REVIEW.md` exists, delete it. A review based on stale specs is misleading — the user should run `/neural:review` fresh after sync.
 
 ## Step 6: Report
 
@@ -62,4 +63,4 @@ CONTEXT.md: N decisions updated, M scope changes
 ```
 
 If in `archive/`: "This feature is archived. Synced specs serve as documentation."
-If in `wip/`: "Specs synced. Run `/neural.review` to verify, or `/neural.archive` to close."
+If in `wip/`: "Specs synced. Run `/neural:review` to verify, or `/neural:archive` to close."
