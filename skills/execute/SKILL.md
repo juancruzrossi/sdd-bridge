@@ -1,6 +1,7 @@
 ---
-name: neural.execute
-description: "[Neural SDD] Test-driven execution loop — one task at a time, red→green→refactor, atomic commits. Part of the neural plugin — invoke via /neural.execute"
+name: execute
+description: "Test-driven execution loop — one task at a time, red→green→refactor, atomic commits"
+disable-model-invocation: true
 keep-coding-instructions: true
 ---
 
@@ -16,8 +17,8 @@ The pace looks slower than parallel dispatch, but it is dramatically more reliab
 2. If exactly one feature directory exists, use it automatically.
 3. If multiple exist and `$ARGUMENTS` matches a feature name, use that one.
 4. If multiple exist and no argument matches, list them and ask: "Which feature should I execute?"
-5. Read `.neural/wip/<feature>/PLAN.md`. If missing, stop and tell the user to run `/neural.plan`.
-6. Read `.neural/wip/<feature>/CONTEXT.md`. If missing, stop and tell the user to run `/neural.interview`.
+5. Read `.neural/wip/<feature>/PLAN.md`. If missing, stop and tell the user to run `/neural:plan`.
+6. Read `.neural/wip/<feature>/CONTEXT.md`. If missing, stop and tell the user to run `/neural:interview`.
 7. Read any ADRs under `.neural/wip/<feature>/docs/adr/` — treat as binding.
 
 ## 2. Build the task queue
@@ -126,5 +127,5 @@ Files changed: <count>
 Commits created: <count>  (or "none — left unstaged")
 ```
 
-If everything succeeded, suggest: **"Ready to verify? Run `/neural.review`."**
+If everything succeeded, suggest: **"Ready to verify? Run `/neural:review`."**
 If anything blocked or was skipped, surface it before suggesting review.

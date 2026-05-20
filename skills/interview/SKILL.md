@@ -1,6 +1,7 @@
 ---
-name: neural.interview
-description: "[Neural SDD] Socratic interview that captures domain language, decisions, and ADRs inside .neural/wip/<feature>/. Part of the neural plugin — invoke via /neural.interview"
+name: interview
+description: "Socratic interview that captures domain language, decisions, and ADRs inside .neural/wip/<feature>/"
+disable-model-invocation: true
 keep-coding-instructions: true
 ---
 
@@ -48,5 +49,5 @@ Interview complete for <feature>
 Context: .neural/wip/<feature>/CONTEXT.md
 ADRs: <count>
 Open items: <count>
-Next: /neural.plan
+Next: /neural:plan
 ```

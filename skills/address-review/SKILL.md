@@ -1,6 +1,7 @@
 ---
-name: neural.address-review
-description: "[Neural SDD] Execute all fixes from a REVIEW.md — address warnings, blocking issues, and gaps found during review. Part of the neural plugin — invoke via /neural.address-review"
+name: address-review
+description: "Execute all fixes from a REVIEW.md — address warnings, blocking issues, and gaps found during review"
+disable-model-invocation: true
 keep-coding-instructions: true
 ---
 
@@ -14,7 +15,7 @@ You are executing the fixes identified in a REVIEW.md produced by review.
 2. If exactly one feature directory exists, use it automatically.
 3. If multiple exist and the user passed `$ARGUMENTS` matching a feature name, use that one.
 4. If multiple exist and no argument matches, list them and ask: "Which feature's review should I address?"
-5. Read `.neural/wip/<feature>/REVIEW.md`. If it does not exist, stop and tell the user to run `/neural.review` first.
+5. Read `.neural/wip/<feature>/REVIEW.md`. If it does not exist, stop and tell the user to run `/neural:review` first.
 6. Read `.neural/wip/<feature>/CONTEXT.md`, `.neural/wip/<feature>/PLAN.md`, and any ADRs under `.neural/wip/<feature>/docs/adr/`. Fixes must honor those decisions.
 
 ## 2. Parse review findings
@@ -73,4 +74,4 @@ Address Review Complete:
   Remaining: K items (skipped by user)
 ```
 
-Then suggest: **"Fixes applied. Run `/neural.review` again to verify, or `/neural.archive` if you're confident."**
+Then suggest: **"Fixes applied. Run `/neural:review` again to verify, or `/neural:archive` if you're confident."**

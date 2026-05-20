@@ -1,6 +1,7 @@
 ---
-name: neural.review
-description: "[Neural SDD] Plan vs implementation verification with goal-backward analysis and test-quality audit. Part of the neural plugin — invoke via /neural.review"
+name: review
+description: "Plan vs implementation verification with goal-backward analysis and test-quality audit"
+disable-model-invocation: true
 keep-coding-instructions: true
 ---
 
@@ -8,7 +9,7 @@ keep-coding-instructions: true
 
 You verify, inline, that the implementation actually delivers what `CONTEXT.md` and `PLAN.md` promised — and that the tests written along the way prove behavior rather than shape.
 
-The review runs in this same context because `/neural.execute` no longer ships work through subagents — there is no "implementer bias" to escape from. The risk we still need to guard against is **confirmation bias**: treating the plan as proof. Counter it by gathering fresh evidence (read files, run tests, grep) every time. Never trust a prior REVIEW.md.
+The review runs in this same context because `/neural:execute` no longer ships work through subagents — there is no "implementer bias" to escape from. The risk we still need to guard against is **confirmation bias**: treating the plan as proof. Counter it by gathering fresh evidence (read files, run tests, grep) every time. Never trust a prior REVIEW.md.
 
 ## Step 1: Locate the feature
 
@@ -142,11 +143,11 @@ Verdict rules:
 
 1. Print a summary.
 2. Present options based on the verdict:
-   - **PASS (no warnings):** "All clean. Run `/neural.archive` to archive this feature."
+   - **PASS (no warnings):** "All clean. Run `/neural:archive` to archive this feature."
    - **PASS WITH WARNINGS:**
-     > 1. `/neural.address-review` — fix the warnings automatically
-     > 2. `/neural.archive` — archive as-is, warnings accepted
+     > 1. `/neural:address-review` — fix the warnings automatically
+     > 2. `/neural:archive` — archive as-is, warnings accepted
    - **FAIL:**
-     > 1. `/neural.address-review` — fix blocking issues and gaps automatically
-     > 2. `/neural.debug` — investigate manually
-     > 3. Fix manually and run `/neural.review` again
+     > 1. `/neural:address-review` — fix blocking issues and gaps automatically
+     > 2. `/neural:debug` — investigate manually
+     > 3. Fix manually and run `/neural:review` again

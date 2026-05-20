@@ -1,6 +1,7 @@
 ---
-name: neural.quick
-description: "[Neural SDD] Fast-path for small tasks — mini-interview, inline plan, execute, and light review in one pass. No files generated. Part of the neural plugin — invoke via /neural.quick"
+name: quick
+description: "Fast-path for small tasks — mini-interview, inline plan, execute, and light review in one pass. No files generated"
+disable-model-invocation: true
 keep-coding-instructions: true
 ---
 
