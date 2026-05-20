@@ -30,11 +30,7 @@ for skill in "$src"/*; do
   [ -d "$skill" ] || continue
   [ -f "$skill/SKILL.md" ] || continue
 
-  base="$(basename "$skill")"
-  case "$base" in
-    using-neural) name="$base" ;;
-    *) name="neural.$base" ;;
-  esac
+  name="neural.$(basename "$skill")"
   rm -rf "$target/$name"
   cp -R "$skill" "$target/$name"
   count=$((count + 1))

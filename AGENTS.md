@@ -15,6 +15,6 @@ A Spec-Driven Development plugin for Claude Code. Codex installs the same root s
 - Claude Code invokes skills as `/neural:<name>`
 - Codex invokes skills with `$neural.<name>` or implicit matching
 - Descriptions: just `"<what it does>"` — no boilerplate prefixes or suffixes
-- All skills (except `using-neural`) set `disable-model-invocation: true` — explicit invocation only
+- All skills set `disable-model-invocation: true` — explicit invocation only
 - Commits: conventional commits in English
 - PRs: squash & merge, delete branch after
