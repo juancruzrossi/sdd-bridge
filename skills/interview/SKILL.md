@@ -7,9 +7,12 @@ keep-coding-instructions: true
 
 # Neural Interview — Clarify Before You Build
 
+> **CRITICAL — NON-NEGOTIABLE: Never use the `AskUserQuestion` tool.**
+> This is a Socratic interview, not a multiple-choice form. Every question goes in plain prose as conversational text, one at a time, waiting for the user's free-form answer. No exceptions — not for "quick" choices, not for branching decisions, not ever.
+
 Interview the user relentlessly about every aspect of the feature until you reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
 
-Ask one question at a time, waiting for the user's answer before continuing. If a question can be answered by exploring the codebase or docs, explore them instead of asking.
+Ask one question at a time as plain text, waiting for the user's answer before continuing. If a question can be answered by exploring the codebase or docs, explore them instead of asking.
 
 Respond in the user's language. Write `CONTEXT.md` and ADRs in that same language.
 
