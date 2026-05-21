@@ -41,6 +41,7 @@ Red flags:
 - Verifying state by bypassing the interface (e.g., raw DB queries).
 - The test name describes **how**, not **what**.
 - The test breaks when you refactor but behavior is unchanged.
+- Do not add tests which simply restate the implementation. These provide zero confidence.
 
 ## Verify through the interface, not around it
 
